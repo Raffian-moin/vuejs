@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+	<div id="app">
+  	<ul>
+  		<li v-for="(person,name,index) in persons" v-bind:key="person.id">{{index+1}}--{{name}}--{{person}}</li> 
+  	</ul>
+  	<!-- for the object in this way -->
+
+  	<ul v-for="bird in birds">{{bird.name}}--{{bird.age}}</ul>
+	</div>
+	<script src="loop.js"></script>
+</body>
+</html>
