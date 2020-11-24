@@ -1,15 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    
+    <h1>my name is: {{name}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: 'nameSection',
+  data:function(){
+    return{
+      name:"moin"
+    }
   }
 }
 </script>
