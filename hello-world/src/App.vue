@@ -6,6 +6,14 @@
   <content-for-props v-bind:ninjas="ninjas"/>
   <!-- <app-content/> -->
   <app-footer/>
+  <app-slot>
+    <template v-slot:second>
+    <p>hey you {{name}}</p>
+  </template>
+  <template v-slot:first>
+    <p>hey you first</p>
+  </template>
+  </app-slot>
 </template>
 
 <script>
@@ -16,6 +24,8 @@
  // import Content from './components/content.vue'
  import Footer from './components/footer.vue'
  import contentforprops from './components/contentforprops.vue'
+ import Slot from './components/slot.vue'
+
 
 
 
@@ -31,6 +41,7 @@ export default {
     // 'app-content':Content,
     'app-footer':Footer,
     'content-for-props':contentforprops,
+    'app-slot':Slot
   },
     data:function(){
     return{
@@ -42,6 +53,7 @@ export default {
         {name: 'Kami', specialty: 'Webpack', show: false},
         {name: 'Yoshi', specialty: 'Data Diggin', show: false}
       ],
+      name:"moin",
 
     }
   }
