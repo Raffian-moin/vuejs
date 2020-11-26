@@ -6,14 +6,23 @@
   <content-for-props v-bind:ninjas="ninjas"/>
   <!-- <app-content/> -->
   <app-footer/>
-  <app-slot>
+<!--   <app-slot>
     <template v-slot:second>
     <p>hey you {{name}}</p>
   </template>
   <template v-slot:first>
     <p>hey you first</p>
   </template>
-  </app-slot>
+  </app-slot> -->
+  <!-- <dynamic-component1></dynamic-component1> -->
+  <!-- <dynamic-component2></dynamic-component2> -->
+  <keep-alive>
+  <component v-bind:is="component"></component>
+  </keep-alive>
+
+  <button @click="component='dynamic-component1'">button 1</button>
+  <button @click="component='dynamic-component2'">button 2</button>
+
 </template>
 
 <script>
@@ -24,7 +33,12 @@
  // import Content from './components/content.vue'
  import Footer from './components/footer.vue'
  import contentforprops from './components/contentforprops.vue'
- import Slot from './components/slot.vue'
+ // import Slot from './components/slot.vue'
+ import dynamicComponent1 from './components/dynamiComponent.vue'
+ import dynamicComponent2 from './components/dynamicComponent2.vue'
+
+
+ 
 
 
 
@@ -41,7 +55,10 @@ export default {
     // 'app-content':Content,
     'app-footer':Footer,
     'content-for-props':contentforprops,
-    'app-slot':Slot
+    // 'app-slot':Slot,
+    'dynamic-component1':dynamicComponent1,
+    'dynamic-component2':dynamicComponent2,
+
   },
     data:function(){
     return{
@@ -54,6 +71,9 @@ export default {
         {name: 'Yoshi', specialty: 'Data Diggin', show: false}
       ],
       name:"moin",
+
+      component:"dynamic-component1",
+
 
     }
   }
