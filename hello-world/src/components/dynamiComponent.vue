@@ -44,16 +44,22 @@
       <input type="submit" value="Submit">
     </div>
   </form>
+  <p>{{month}}</p>
 </div>
 
 </template>
 
+
 <script>
+
+import mymixin from '../mixin'
+
 export default {
   name: 'dynamicComponent1',
   props: {
     msg: String
-  }
+  },
+  mixins:[mymixin],
 }
 </script>
 
