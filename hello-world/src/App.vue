@@ -2,6 +2,10 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- <nameSection/> -->
+  <router-link to="/foo">Foo</router-link> |
+  <router-link to="/bar">Bar</router-link> 
+
+  <router-view></router-view>
   <app-header/>
   <content-for-props v-bind:ninjas="ninjas"/>
   <!-- <app-content/> -->
