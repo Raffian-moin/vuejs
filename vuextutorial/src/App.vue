@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <product-list-one></product-list-one>
-    <product-list-two></product-list-two>
+    <!-- <product-list-two></product-list-two> -->
   </div>
 </template>
 
 <script>
 import ProductListOne from './components/productListOne.vue'
-import ProductListTwo from './components/productListTwo.vue'
+// import ProductListTwo from './components/productListTwo.vue'
 
 
 export default {
   name: 'App',
   components: {
     ProductListOne,
-    ProductListTwo
+    // ProductListTwo
   }
 }
 </script>

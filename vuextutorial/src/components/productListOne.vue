@@ -1,9 +1,9 @@
 <template>
   <div class="hello" id="product-list-one">
       <ul>
-          <li  v-for="product in productList" :key="product.id">
-              <span class="name">{{product.name}}</span>
-              <span class="price">{{product.price}}</span>
+          <li  v-for="user in users" :key="user.id">
+              <span class="name">{{user.username}}</span>
+              <span class="price">{{user.email}}</span>
 
           </li>
       </ul>
@@ -13,24 +13,22 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import { mapGetters } from 'vuex'
+// import { mapActions } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
   name: 'ProductListOne',
   computed: {
-  productList () {
-    return this.$store.state.products;
+  users () {
+    return this.$store.state.users;
   },
-    ...mapGetters([
-      'saleProducts',
-      // ...
-    ])
+    // ...mapGetters([
+    //   'saleProducts',
+    //   // ...
+    // ])
 },
-methods:{
-    ...mapActions([
-      'increment',
-    ])
+mounted(){
+   this.$store.dispatch("users");
 }
 
 }
